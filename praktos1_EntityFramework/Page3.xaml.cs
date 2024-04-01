@@ -35,5 +35,58 @@ namespace praktos1_EntityFramework
             var selected = combo_datasetic.SelectedItem as Orders;
             MessageBox.Show(selected.OrderDate.ToString());
         }
+
+        private void Button_add(object sender, RoutedEventArgs e)
+        {
+            Orders c = new Orders();
+            c.OrderID = Convert.ToInt32(Nametbx.Text);
+            c.UserID = Convert.ToInt32(Nametbx2.Text);
+            c.OrderDate = Convert.ToDateTime(Nametbx3.Text);
+            c.TotalAmount = Convert.ToInt32(Nametbx4.Text);
+
+            context.Orders.Add(c);
+            context.SaveChanges();
+            datasetik.ItemsSource = context.Orders.ToList();
+        }
+
+        private void Button_delete(object sender, RoutedEventArgs e)
+        {
+            if (datasetik.SelectedItem != null)
+            {
+                context.Orders.Remove(datasetik.SelectedItem as Orders);
+                context.SaveChanges();
+                datasetik.ItemsSource = context.Orders.ToList();
+            }
+        }
+
+        private void Button_change(object sender, RoutedEventArgs e)
+        {
+            if (datasetik.SelectedItem != null)
+            {
+                var selected = datasetik.SelectedItem as Orders;
+                selected.OrderID = Convert.ToInt32(Nametbx.Text);
+                selected.UserID = Convert.ToInt32(Nametbx2.Text);
+                selected.OrderDate = Convert.ToDateTime(Nametbx3.Text);
+                selected.TotalAmount = Convert.ToInt32(Nametbx4.Text);
+                context.SaveChanges();
+                datasetik.SelectedItem = context.Addresses.ToList();
+                datasetik.ItemsSource = context.Addresses.ToList();
+            }
+        }
+
+        private void datasetik_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (datasetik.SelectedItem != null)
+            {
+                var selected = datasetik.SelectedItem as Orders;
+                Nametbx.Text = selected.OrderID.ToString();
+                Nametbx2.Text = selected.UserID.ToString();
+                Nametbx3.Text = selected.OrderDate.ToString();
+                Nametbx4.Text = selected.TotalAmount.ToString();
+
+            }
+        }
+
+        
     }
 }

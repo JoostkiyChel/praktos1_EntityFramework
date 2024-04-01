@@ -19,6 +19,6 @@ namespace praktos1_EntityFramework
         public Nullable<System.DateTime> OrderDate { get; set; }
         public Nullable<decimal> TotalAmount { get; set; }
     
-        public virtual Users Users {private get; set; }
+        public virtual Users Users { private get; set; }
     }
 }

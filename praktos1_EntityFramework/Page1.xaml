@@ -4,14 +4,19 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:praktos1_EntityFramework"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page1">
+      mc:Ignorable="d"
+      Title="Page1" Height="538" Width="901">
 
     <Grid>
         <Grid Background="BlanchedAlmond">
-            <ComboBox x:Name="combo_datasetic" Margin="436,90,10,49" SelectionChanged="combo_datasetic_SelectionChanged" Background="Black"/>
-            <DataGrid x:Name="datasetik" HorizontalAlignment="Left" Width="354" Margin="46,84,0,44"  />
+            <ComboBox x:Name="combo_datasetic" Margin="369,16,77,381" SelectionChanged="combo_datasetic_SelectionChanged" Background="Black"/>
+            <DataGrid x:Name="datasetik" HorizontalAlignment="Left" Width="354" Margin="10,10,0,343" SelectionChanged="datasetik_SelectionChanged"  />
+            <TextBox x:Name="Nametbx" Margin="10,320,626,130"  />
+            <Button  Content="Добавить" Margin="10,413,626,57" Click="Button_add" />
+            <TextBox x:Name="Nametbx2" Margin="292,323,344,127"  />
+            <Button  Content="Удалить" Margin="292,416,329,60" Click="button_delete" />
+            <TextBox x:Name="Nametbx3" Margin="596,328,39,122"  />
+            <Button  Content="изменить" Margin="596,421,43,60" Click="Button_change" />
         </Grid>
     </Grid>
 </Page>

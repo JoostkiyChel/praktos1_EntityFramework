@@ -34,5 +34,7 @@ namespace praktos1_EntityFramework
         {
             PageFrame.Content = new Page3();
         }
+
+        
     }
 }

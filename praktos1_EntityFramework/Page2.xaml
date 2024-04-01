@@ -10,8 +10,26 @@
 
     <Grid>
         <Grid Background="BlanchedAlmond">
-            <ComboBox x:Name="combo_datasetic" Margin="436,90,10,49" SelectionChanged="combo_datasetic_SelectionChanged" Background="Black"/>
-            <DataGrid x:Name="datasetik" HorizontalAlignment="Left" Width="354" Margin="46,84,0,44"  />
+            <ComboBox x:Name="combo_datasetic" Margin="505,10,103,384" SelectionChanged="combo_datasetic_SelectionChanged" Background="Black"/>
+            <DataGrid x:Name="datasetik" HorizontalAlignment="Left" Width="490" Margin="10,10,0,187" SelectionChanged="datasetik_SelectionChanged" />
+            <TextBox x:Name="Nametbx" Margin="0,297,648,96" RenderTransformOrigin="0.5,0.5"  >
+
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Button Content="Добавить" Margin="0,369,578,35" Click="Button_Add" />
+            <TextBox x:Name="Nametbx2" Margin="157,297,507,96" RenderTransformOrigin="0.5,0.5" />
+            <Button Content="Удалить" Margin="263,369,307,35" Click="Button_Delete" />
+            <TextBox x:Name="Nametbx3" Margin="298,297,366,96" RenderTransformOrigin="0.5,0.5" />
+            <TextBox x:Name="Nametbx4" Margin="439,297,225,96" RenderTransformOrigin="0.5,0.5" />
+            <TextBox x:Name="Nametbx5" Margin="580,297,84,96" RenderTransformOrigin="0.5,0.5" />
+            <Button Content="изменить" Margin="517,369,53,35" Click="Button_Change" />
         </Grid>
     </Grid>
 </Page>

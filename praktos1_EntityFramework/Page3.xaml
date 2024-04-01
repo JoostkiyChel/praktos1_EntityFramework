@@ -9,9 +9,48 @@
       Title="Page3">
 
     <Grid>
-        <Grid Background="BlanchedAlmond">
-            <ComboBox x:Name="combo_datasetic" Margin="436,90,10,49" SelectionChanged="combo_datasetic_SelectionChanged" Background="Black"/>
-            <DataGrid x:Name="datasetik" HorizontalAlignment="Left" Width="354" Margin="46,84,0,44"  />
+        <Grid Background="BlanchedAlmond" Margin="-7,-2,-1,1" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.136"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1008*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="combo_datasetic" Margin="461,38,27,341" SelectionChanged="combo_datasetic_SelectionChanged" Background="Black" Grid.Column="1"/>
+            <DataGrid x:Name="datasetik" HorizontalAlignment="Left" Width="431" Margin="9,10,0,170" SelectionChanged="datasetik_SelectionChanged" Grid.Column="1" />
+            <TextBox x:Name="Nametbx" Margin="-80,305,723,86" RenderTransformOrigin="0.448,-0.76" Grid.ColumnSpan="2"  >
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-180.132"/>
+                        <TranslateTransform X="96.186" Y="-0.11"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Button Content="Добавить" Margin="2,365,576,43" Click="Button_add" Grid.Column="1" />
+            <TextBox x:Name="Nametbx2" Margin="165,308,487,89" RenderTransformOrigin="0.5,0.5" Grid.Column="1"  />
+
+            <TextBox x:Name="Nametbx3" Margin="323,312,324,91" RenderTransformOrigin="0.5,0.5" Grid.Column="1"  />
+            <TextBox x:Name="Nametbx4" Margin="483,312,167,90" RenderTransformOrigin="0.315,0.331" Grid.Column="1"  >
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-3.161"/>
+                        <TranslateTransform X="-0.359" Y="1.534"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <TextBox x:Name="Nametbx5" Margin="645,308,21,93" RenderTransformOrigin="0.478,0.921" Grid.Column="1"  />
+            <Button Content="Удалить" Margin="238,371,333,43" Click="Button_delete" Grid.Column="1" RenderTransformOrigin="1.549,4.121" />
+            <Button Content="изменить" Margin="487,369,19,41" Click="Button_change" Grid.Column="1" RenderTransformOrigin="0.149,-0.568" />
         </Grid>
     </Grid>
 </Page>

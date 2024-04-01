@@ -5,11 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:praktos1_EntityFramework"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="622" Width="918">
     <Grid>
-        <Button x:Name="Page_1" Grid.Column="0" Content="Открыть таблицу Users" Margin="10,38,553,350" Click="Page_Click"/>
-        <Button x:Name="Page_2" Content="Открыть таблицу Addresses" Margin="517,38,21,350" Click="Page2_Click"/>
-        <Button x:Name="Page_3" Content="Открыть таблицу Orders" Margin="274,39,314,350" Click="Page3_Click" RenderTransformOrigin="0.5,0.5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Page_1" Grid.Column="0" Content="Открыть таблицу Users" Margin="26,12,658,542" Click="Page_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.288"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="Page_2" Content="Открыть таблицу Addresses" Margin="591,10,42,535" Click="Page2_Click"/>
+        <Button x:Name="Page_3" Content="Открыть таблицу Orders" Margin="293,13,388,536" Click="Page3_Click" RenderTransformOrigin="0.5,0.5">
+
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -19,7 +33,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Frame x:Name= "PageFrame" Margin="10,100,10,10"/>
-        
+        <Frame x:Name= "PageFrame" Margin="10,101,10,10"/>
+
     </Grid>
 </Window>

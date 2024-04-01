@@ -35,5 +35,52 @@ namespace praktos1_EntityFramework
             var selected = combo_datasetic.SelectedItem as Users;
             MessageBox.Show(selected.UserID.ToString());
         }
+
+        private void Button_add(object sender, RoutedEventArgs e)
+        {
+            Users c = new Users();
+            c.UserName = Nametbx2.Text;
+            c.Email = Nametbx3.Text;
+            c.UserID = Convert.ToInt32(Nametbx.Text);
+
+            context.Users.Add(c);
+            context.SaveChanges();
+            datasetik.ItemsSource = context.Users.ToList() ;    
+        }
+
+        private void button_delete(object sender, RoutedEventArgs e)
+        {
+            if (datasetik.SelectedItem != null)
+            {
+                context.Users.Remove(datasetik.SelectedItem as  Users);
+                context.SaveChanges();
+                datasetik.ItemsSource = context.Users.ToList();
+            }
+        }
+
+        private void Button_change(object sender, RoutedEventArgs e)
+        {
+            if (datasetik.SelectedItem != null)
+            {
+                var selected = datasetik.SelectedItem as Users;
+                selected.Email = Nametbx3.Text;
+                selected.UserName = Nametbx2.Text;
+                selected.UserID = Convert.ToInt32(Nametbx.Text);
+                context.SaveChanges();
+                datasetik.SelectedItem = context.Users.ToList();
+                datasetik.ItemsSource = context.Users.ToList();
+            }
+        }
+
+        private void datasetik_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (datasetik.SelectedItem != null)
+            {
+                var selected = datasetik.SelectedItem as Users;
+                Nametbx.Text = selected.UserID.ToString();
+                Nametbx2.Text = selected.UserName.ToString();
+                Nametbx3.Text = selected.Email.ToString();
+            }
+        }
     }
 }
